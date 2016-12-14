@@ -2,18 +2,19 @@
   <div id="app">
     <navbar></navbar>
     <img src="./assets/logo.png">
-    <router-view></router-view>
+    <core-layout>
+      <router-view></router-view>
+    </core-layout>
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar'
+import CoreLayout from './layouts/CoreLayout'
 
 export default {
   name: 'app',
-  components: {
-    Navbar
-  }
+  components: { Navbar, CoreLayout }
 }
 </script>
 
