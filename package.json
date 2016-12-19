@@ -1,7 +1,7 @@
 {
   "name": "poc",
   "version": "1.0.0",
-  "description": "proof of concept",
+  "description": "proof of concept of vue",
   "author": "lactozily <lactoz.ily@gmail.com>",
   "private": true,
   "scripts": {
