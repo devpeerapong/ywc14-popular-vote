@@ -14,9 +14,10 @@ const actions = {
   [FETCH]: fetchAction
 }
 
-function fetchAction ({ commit, state }, type) {
+function fetchAction ({ commit, state }, { type, facebook }) {
+  // console.log('action', type, facebook)
   commit(FETCH_REQUEST)
-  return fetch(type).then(response => {
+  return fetch({ type, facebook }).then(response => {
     commit(FETCH_SUCCESS, response.data)
   }, () => {
     commit(FETCH_FAIL)

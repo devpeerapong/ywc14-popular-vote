@@ -25,10 +25,11 @@ export default {
   },
   methods: {
     setup () {
-      this.fetch('boy', this.facebook).catch(() => this.$router.push('/girl'))
+      // console.log('fb', this.facebook)
+      this.fetch({ type: 'boy', facebook: this.facebook }).catch(() => this.$router.push('/girl'))
     },
     onVote (facebook) {
-      vote('boy', this.facebook, facebook).then(
+      vote({ type: 'boy', voter: this.facebook, facebook }).then(
         () => this.$router.push('/girl'),
         () => console.log('nothing')
       )
