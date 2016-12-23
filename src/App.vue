@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <img src="./assets/logo.png">
     <core-layout>
       <router-view></router-view>
     </core-layout>
@@ -9,12 +7,26 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar'
 import CoreLayout from './layouts/CoreLayout'
 
 export default {
   name: 'app',
-  components: { Navbar, CoreLayout }
+  components: { CoreLayout },
+  created () {
+    /* eslint-disable */
+    window.fbAsyncInit = () => {
+      FB.init({ appId: '924745590937811', version: 'v2.7' });
+    }
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'))
+    /* eslint-enable */
+  }
 }
 </script>
 
@@ -29,6 +41,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

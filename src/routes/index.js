@@ -1,19 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Hello from '../components/Hello'
-
-import CounterRoute from './counter'
-import AsyncCounterRoute from './async-counter'
+import Login from '../components/Login'
+import Finished from '../components/Finished'
+import Boy from '../components/Boy'
+import Girl from '../components/Girl'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: Hello },
-    CounterRoute,
-    AsyncCounterRoute
+    { path: '/', component: Login },
+    { path: '/finished', component: Finished },
+    { path: '/boy', component: Boy },
+    { path: '/girl', component: Girl }
   ]
 })
 
