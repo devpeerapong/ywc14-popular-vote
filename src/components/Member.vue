@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img class="image" src="http://placehold.it/300" />
+    <img class="image" :src="'https://ywc14.ywc.in.th/backend/' + image.replace('uploads/', '')" />
     <div class="name">{{ name }}</div>
     <button class="button" @click="$emit('vote')">โหวต</div>
   </div>
