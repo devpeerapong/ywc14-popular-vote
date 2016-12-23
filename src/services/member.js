@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-const hostname = 'http://localhost:8080/member'
+const hostname = {
+  development: 'http://localhost:8080/member',
+  production: 'https://ywc14.ywc.in.th/backend/member'
+}[process.env.NODE_ENV]
 
 export function fetch ({ type, facebook }) {
   // console.log('fbbb', facebook)
